@@ -1,0 +1,23 @@
+
+
+.navbar ul li a{
+    font-size: 18px;
+    font-weight: 600;
+}
+.navbar .buttons a{
+    margin-right: 10px;
+}
+
+.banner {
+    background-image: url('./assets/banner.jpg');
+    background-size: 100%;
+    height: 600px;
+    position: relative;
+}
+.banner .banner-content{
+    position: absolute;
+    top: 100px;
+    max-width: 600px;
+    left: 50px;
+    color: white;
+}
