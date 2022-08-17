@@ -1,0 +1,36 @@
+@import './variables';
+
+.navbar{
+    background: rgb(248, 248, 248);
+    padding: 20px;
+    .nav-header{
+        float: left;
+        .btn-toggle{
+            display: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .nav-links{
+        float: right;
+        li{
+            display: inline-block;
+            padding: 0 10px;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            &.cart-button{
+                position: relative;
+                .cart-value{
+                    position: absolute;
+                    bottom: 16px;
+                    left: 16px;
+                }
+            }
+        }
+    }
+    @include clearFix;
+}
