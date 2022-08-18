@@ -1,7 +1,4 @@
-import Home from "./Home";
-import Products from "./Products"; 
-import Product from "./Product";
-import Cart from "./Cart";
-import Error from "./Error";
+import Products from "./Products";
+import ShoppingCart from "./ShoppingCart";
 
-export {Home, Products, Product, Cart, Error}
+export {Products, ShoppingCart}

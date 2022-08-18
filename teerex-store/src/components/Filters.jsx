@@ -1,51 +1,46 @@
-import React from "react";
-import { useEffect } from "react";
-import {useSelector, useDispatch} from 'react-redux';
-import { filterProducts, handleColor } from "../redux/actions";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { clearFilters, handleFilter } from '../redux/actions';
+
 const Filters = () => {
-  const data = useSelector((state) => state.products.products);
-  const colors = useSelector((state) => state.products.colors);
-  console.log(colors);
-  console.log("updated" , data);
-  const dispatch = useDispatch();
-  // console.log(data);
-  // const [color, setColor] = useState([
-  //   {id: 1, checked: false, label: 'red'},
-  //   {id: 2, checked: false, label: 'blue'},
-  //   {id: 3, checked: false, label: 'green'},
-  // ])
-  // const handleChecked = (id) => {
-  //   const changeChecked = colors.map((item) => item.id === id ? {...item, checked: !item.checked} : item);
-  //   setColor(changeChecked);
-  // }
-
-  // const applyFilters = () => {
-  //   let updatedData = data;
-  //   const colorChecked = color.filter((item) => item.checked).map((item) => item.label.toLowerCase())
-  //   if(colorChecked.length){
-  //     updatedData = updatedData.filter((item) => colorChecked.includes(item.color.toLowerCase()));
-  //   }
-  // }
-
-
-  useEffect(() => {
-      dispatch(filterProducts())
-  },[colors, filterProducts])
-  return (
-    <div className="filters">
-      <ul className="filters-list">
-        <h3>Colour</h3>
-          <li>
-              {colors.map((el) => {
-              return <div key={el.id}>
-                <input type="checkbox" checked={el.checked} value={el.label} id={el.label} onChange={() => dispatch(handleColor(el.id))} />
-                <label htmlFor={el.label}>{el.label.toLocaleUpperCase()}</label>
-              </div>
+    const colors = useSelector((state) => state.filters.colors);
+    const gender = useSelector((state) => state.filters.gender);
+    const type = useSelector((state) => state.filters.type);
+    const dispatch = useDispatch();
+    return (
+        <div className='filters'>
+            <h3>Filter Products By</h3>
+            <h5>Gender</h5>
+            {gender.map((el) => {
+                return <div className='filters__list' key={el.id}>
+                    <input onChange={() => dispatch(handleFilter(el.id))} id={el.name} type="checkbox" checked={el.checked} />
+                    <label htmlFor={el.name}>{el.name}</label>
+                </div>
             })}
-          </li>
-        </ul>
-    </div>
-  );
-};
+            <h5>Type</h5>
+            {type.map((el) => {
+                return <div className='filters__list' key={el.id}>
+                    <input onChange={() => dispatch(handleFilter(el.id))} id={el.name} type="checkbox" checked={el.checked} />
+                    <label htmlFor={el.name}>{el.name}</label>
+                </div>
+            })}
+            <h5>Colors</h5>
+            {colors.map((el) => {
+                return <div className='filters__list' key={el.id}>
+                    <input onChange={() => dispatch(handleFilter(el.id))} id={el.name} type="checkbox" checked={el.checked} />
+                    <label htmlFor={el.name}>{el.name}</label>
+                </div>
+            })}
+            <br />
+            <div className='filters__list'>
+                    <input onChange={() => dispatch(clearFilters())} id="clear" type="checkbox"  />
+                    <label htmlFor="clear">Clear Filters</label>
+            </div>
+        </div>
+    )
+}
 
-export default Filters;
+export default Filters
+
+
+

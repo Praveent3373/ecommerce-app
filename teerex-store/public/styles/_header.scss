@@ -1,0 +1,27 @@
+
+
+.header{
+    padding: 13px 20px;
+    background: #f8f8f8;
+    margin-bottom: 20px;
+    &__links{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &--link{
+            color: black;
+            font-weight: bold;
+        }
+    }
+}
+
+.footer{
+    padding: 13px 0;
+    background: #f8f8f8;
+    &__heading{
+        padding: 0 20px;
+        &--text{
+            color: tomato; padding: 0;
+        }
+    }
+}

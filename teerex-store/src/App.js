@@ -1,24 +1,20 @@
-import './main.scss';
-import { BrowserRouter, Routes, Route, } from 'react-router-dom';
-import { Home, Products, Product, Cart, Error } from './pages';
-import {Navbar, Filters, Footer} from './components';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Header, Footer } from "./components";
+import {Products, ShoppingCart} from './pages/index'
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar/>
-        <div className="main">
-        {/* <Filters/> */}
-          <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/products' element={<Products/>} />
-            <Route path='/products/:id' element={<Product/>} />
-            <Route path='/cart' element={<Cart/>} />
-            <Route path='*' element={<Error/>} />
-          </Routes>
-        </div>
-      <Footer/>   
-    </BrowserRouter>
+    <div className="main">
+        <BrowserRouter>
+            <Header/>
+              <div className="content">
+                <Routes>
+                  <Route path="/products" element={<Products/>}/>
+                  <Route path="/shopping-cart" element={<ShoppingCart/>}/>
+                </Routes>
+              </div>
+            <Footer/>
+        </BrowserRouter>
+    </div>
   );
 }
 

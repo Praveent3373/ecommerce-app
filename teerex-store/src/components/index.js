@@ -1,5 +1,4 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import Filters from "./Filters";
+import Header from "./Header"
+import Footer from "./Footer"
 
-export {Navbar, Footer, Filters}
+export {Header, Footer}

@@ -1,27 +1,21 @@
 import React from 'react'
+import Filters from '../components/Filters'
+import ProductsList from '../components/ProductsList'
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Filters } from '../components'
 import { fetchProducts } from '../redux/actions'
-import Product from './Product'
+import { useDispatch } from 'react-redux/es/exports'
 
 const Products = () => {
-  const products = useSelector((state) => state.products.products);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchProducts());
-  },[]);
-  console.log(products)
-  return (
-    <div className="products-container">
-      <div className="filters-wrapper">
-          <Filters/>
-      </div>
-      <div className='products-wrapper'>
-          <Product/>
-      </div>
-    </div>
-  )
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(fetchProducts())
+    },[])
+    return (
+        <div className='products-wrapper'>
+            <Filters/>
+            <ProductsList/>
+        </div>
+    )
 }
 
 export default Products
