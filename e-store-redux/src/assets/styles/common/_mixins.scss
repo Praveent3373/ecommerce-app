@@ -1,0 +1,56 @@
+
+/* mixins (@include)*/
+
+@mixin displayFlex($argument: flex){ 
+    @if $argument == grid{
+        display: -ms-grid;
+        display: grid;
+    }@else{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+}
+
+@mixin flex_wrap($argument){
+    -webkit-flex-wrap: $argument;
+    -moz-flex-wrap: $argument;
+    -ms-flex-wrap: $argument;
+    -o-flex-wrap: $argument;
+    flex-wrap: $argument;
+}
+
+@mixin flexDirection($argument){
+    -webkit-flex-direction: $argument;
+    -moz-flex-direction: $argument;
+    -ms-flex-direction: $argument;
+    -o-flex-direction: $argument;
+    flex-direction: $argument;
+}
+
+@mixin order($argument){
+    -webkit-order: $argument;
+    -moz-order: $argument;
+    -ms-order: $argument;
+    -o-order: $argument;
+    order: $argument;
+}
+
+@mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+@mixin transform($arguments) {
+    -webkit-transform: $arguments;
+    -moz-transform: $arguments;
+    -ms-transform: $arguments;
+    -o-transform: $arguments;
+    transform: $arguments;
+}
+

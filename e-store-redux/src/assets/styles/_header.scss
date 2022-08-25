@@ -1,0 +1,164 @@
+@import './common/mixins';
+
+.navbar{
+    width: 100%; padding: 20px;
+    background: #f9f9f9;
+    &__header, &__links, &__greet, .cart-btns{
+        display: inline-block;
+        vertical-align: middle;
+        // width: calc((100% - 2 * 30px) / 3);
+        &:not(:last-child){
+            // margin-right: 30px;
+            @media only screen and (max-width: 767px){
+                margin-right: 0;
+            }
+        }
+    }
+    &__header{
+        width: 20%;
+        @media only screen and (max-width: 767px){
+            width: 50%; 
+        }
+        > div{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &--toggle{
+            margin-right: 20px;
+            button{
+                border: 0; background: transparent;
+                cursor: pointer; 
+            }
+            svg{
+                font-size: 30px;
+            }
+            @media (min-width: 768px){
+                display: none !important;
+            }
+        }
+        &--logo{
+            a{
+                letter-spacing: 3px;
+                color: tomato; 
+            }
+        }
+    }
+    &__links{
+        width: 40%;
+        li{
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 15px;
+        }
+        a{
+            font-size: 18px; text-transform: capitalize;
+            font-weight: bold; color: #272626; letter-spacing: 2px;
+        }
+        @media only screen and (max-width: 767px){
+            display: none;
+        }
+    }
+    &__greet{
+        width: 20%;
+        @media only screen and (max-width: 1120px){
+            display: none;
+        }
+    }
+    .cart-btns{
+        text-align: right;   width: 20%;
+        &__btn{
+            font-size: 20px; color: #272626;
+            .cart-value{
+                position: relative;
+                > span{
+                    position: absolute; top: -13px; left: 13px;
+                    background: tomato; color: white;
+                    width: 25px; height: 25px; border-radius: 50%;
+                    text-align: center;font-size: 16px; margin: auto;
+                }
+            }
+        }
+        &__auth{
+            border: 0; font-size: 18px; margin-left: 40px;
+            background: transparent; letter-spacing: 2px;
+            cursor: pointer;
+            @media only screen and (max-width: 767px){
+                margin-left: 20px;
+            }
+        }
+        @media only screen and (max-width: 767px){
+            width: 50%; text-align: right;
+        }
+    }
+}
+
+
+
+// sidebar
+
+.sidebar{
+    position: fixed; top: 0; left: 0;
+    background: white; width: 100%; height: 100%;
+    padding: 30px; transition: .2s all ease;
+    transform: translate(-100%); z-index: -1;
+    &__header{
+        @include displayFlex(flex);
+        justify-content: space-between;
+        align-items: center;
+        &--logo{
+            color: tomato;
+            font-size: 25px;
+            letter-spacing: 5px;
+        }
+        &--close{
+            button{
+                background: none; border: 0;
+                font-size: 30px; color: white;
+                background: tomato; width: 50px; height: 50px;
+                border-radius: 50%; 
+                @media only screen and (max-width: 767px){
+                    width: 40px; height: 40px;
+                }
+                svg{
+                    // vertical-align: middle;
+                    // display: inline-block;
+                    margin: 5px 0 0; font-size: 21px;
+                }
+            }
+        }
+    }
+    &__links{
+        li{
+            margin: 25px 0;
+            a{
+                font-size: 18px; text-transform: capitalize;
+                font-weight: 600; color: #272626;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    &__greet{
+
+    }
+    @media only screen and (min-width: 768px){
+        display: none;
+    }
+}
+.show-sidebar{
+    z-index: 999; transform: translate(0);
+}
+
+
+// footer
+.footer{
+    background: #272626;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    p{
+        font-size: 18px;
+    }
+    span{
+        color: tomato; margin: 0 15px;
+    }
+}

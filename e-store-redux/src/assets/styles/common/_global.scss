@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import './mixins';
+
+
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+}
+
+.main{
+    
+}
+.main > .content {
+    min-height: 100vh; padding: 0 20px;
+}
+
+ul{
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer
+}
+
+.section-center{
+    @include displayFlex(flex);
+    @include flexDirection(row);
+    vertical-align: middle;
+    align-items: center;
+    @media only screen and (max-width: 767px){
+        @include flexDirection(column)
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+npx create-react-app e-store-redux
+rm -rf .git (if it is cloned from git)
+npm install (if it is cloned from git)
+
+npm i react-router-dom
+npm i node-sass
+npm i redux react-redux redux-thunk axios
+npm i nanoid
+npm i react-loading-skeleton
+npm i react-icons --save
+npm i react-responsive-carousel
+
+npm install @auth0/auth0-react
+
+
+formspree - to handle the forms
+auth0 - login authentication
+private route
+
+
+npm install dotenv@8.2.0 stripe@8.130.0 @stripe/react-stripe-js@1.1.2 @stripe/stripe-js@1.11.0 netlify@6.0.12
+
+fixing the bugs (from termincal elminate which is not used)
+
+

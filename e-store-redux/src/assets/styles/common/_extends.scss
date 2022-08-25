@@ -1,0 +1,20 @@
+
+// extends (@extend)
+
+/* clear floats */
+.clearFix {
+    &:after{
+        clear: both; content: ""; display: block;
+    }
+}
+
+/* ellipsis */
+.elips {
+    display: block;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 42px;
+}

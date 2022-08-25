@@ -1,0 +1,151 @@
+@import '../styles/common/mixins';
+
+.homepage{
+    > .content{
+        max-width: 1366px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0  20px;
+        @media only screen and (max-width: 767px){
+        }
+        h2.title{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.banners{
+    .carousel-status, .control-dots, .carousel + .carousel{
+        display: none;
+    }
+}
+
+.hero{
+    padding: 50px 0 0 0;
+    &__content{
+        padding-right: 60px;
+        @media only screen and (max-width: 767px){
+            padding-right: 0;
+        }
+    }
+    &__image{
+        @media only screen and (max-width: 767px){
+            display: none;
+        }
+    }
+    p{
+        margin: 15px 0;
+    }
+    button{
+        border: 0;
+        background: $clr_primary;
+        color: $clr_white;
+        padding: 5px 15px;
+        a{
+            color: white;
+        }
+    }
+}
+
+
+.featured {
+    padding: 40px 0 0;
+    .product{
+        &:not(:last-child){
+            margin-right: 30px;
+        }
+    }
+}
+
+.loading{
+    h1{
+        margin: 20px 0; color: orange;
+    }
+}
+.error{
+    h1{
+        margin: 20px 0; color: red;
+    }
+}
+
+.services{
+    padding: 50px 0 0;
+    &__header{
+        margin: 0 0 30px 0;
+    }
+    &__content{
+        width: 100%;
+    }
+    &__service{
+        width: calc((100% - 2 * 30px) / 3);
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        background: $clr_primary;
+        padding: 30px 20px; color: $clr_white;
+        border-radius: 5px;
+        @media only screen and (max-width: 767px){
+            width: 100%; margin-bottom: 30px;
+        }
+        &:not(:last-child){
+            margin-right: 30px;
+            @media only screen and (max-width: 767px){
+                margin-right: 0;
+            }
+        }
+        &--icon{
+            svg{
+                font-size: 30px;
+            }
+        }
+        &--heading{
+            text-transform: capitalize;
+            margin: 10px 0;
+        }
+        &--text{}
+    }
+}
+
+.contact{
+    padding: 50px 0;
+    > div{
+        width: calc((100% - 1 * 30px) / 2);
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        @media only screen and (max-width: 767px){
+            width: 100%;
+        }
+    }
+    &__content{
+        h2, p{
+            text-align: left;
+        }
+        p{
+            margin: 15px 0 0;
+        }
+    }
+    &__form{
+        form{
+            @media only screen and (max-width: 767px){
+                @include displayFlex(flex);
+                margin: 30px 0 0;
+            }
+        }
+        input, button{
+            height: 25px;
+        }
+        input{
+            border: 0;
+            border-bottom: 2px solid $clr_primary;
+            &:focus-visible{
+                 outline: 0;
+            }
+        }
+        button{
+            background: $clr_primary;
+            border: 1px solid $clr_primary; padding: 0 10px;
+            color: $clr_white; font-weight: 600;
+        }
+    }
+}

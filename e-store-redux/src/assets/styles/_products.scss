@@ -1,0 +1,263 @@
+@import '../styles/common/variables';
+
+.products{
+    margin: 30px 0 0; padding: 0 20px;
+    > div{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .filters{
+        width: 25%;
+        @media only screen and (max-width: 767px){
+            width: 50%; padding-right: 15px;
+        }
+    }
+    .list{
+        width: 75%;
+        @media only screen and (max-width: 767px){
+            width: 50%;
+        }
+        .sort{
+            p{
+                @media only screen and (max-width: 767px){
+                    font-size: 10px;
+                }
+            }
+            label{
+                @media only screen and (max-width: 767px){
+                   display: none;
+                }
+            }
+        }
+    }
+    .sort{
+        @include displayFlex(flex);
+        justify-content: space-between;
+        margin: 0 0 15px 0;
+    }
+    .products-list{
+        > .product {
+            &:not(:nth-child(4n)){
+                margin-right: 30px;
+            }
+            img{
+                @media only screen and (max-width: 767px){
+                    height: 120px;
+                }
+
+            }
+        }
+    }
+}
+
+
+
+.product{
+    width: calc((100% - 3 * 30px) / 4);
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 30px;
+    // &:not(:nth-child(4n)){
+    //     margin-right: 30px;
+    // }
+    @media only screen and (max-width: 767px){
+        width: 100%; display: block; margin-bottom: 20px;
+    }
+    &__image{
+        img{
+            width: 100%; height: 250px;
+        }
+    }
+    &__details{
+        @include displayFlex(flex);
+        @include flexDirection(row);
+        justify-content: space-between;
+        margin: 5px 0 0;
+        &--name{
+            text-transform: capitalize;
+        }
+        &--price{
+            color: $clr_primary;
+        }
+    }
+}
+
+
+.single-product{
+    padding: 50px 20px;
+    &__link{
+        margin-bottom: 15px;
+        a{
+            color: $clr_primary; font-weight: 600;
+        }
+    }
+    &__data{
+        > div{
+            width: calc((100% - 1 * 30px) / 2);
+            display: inline-block;
+            vertical-align: middle;
+            @media only screen and (max-width: 767px){
+                display: block; width: 100%;
+            }
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+        }
+        .images{
+            &--main{
+                img{
+                    width: 100%; height: 400px;
+                    @media only screen and (max-width: 767px){
+                        height: 200px;
+                    }
+                }
+            }
+            &--thumbnail{
+                margin: 10px 0;
+                img{
+                    width: calc((100% - 4 * 15px) / 5);
+                    height: 100px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    @media only screen and (max-width: 767px){
+                        height: 60px;
+                    }
+                    &:not(:last-child){
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+        .content{
+            &__title{
+                text-transform: capitalize;
+            }
+            &__price{
+                margin: 10px 0;
+            }
+            &__desc{
+                font-size: 16px; margin: 10px 0;
+            }
+            &__info{
+                margin: 10px 0;
+                span{
+                    font-weight: 600;
+                }
+            }
+            .stars{
+                margin: 10px 0;
+                span:not(:last-child){
+                    color: red;
+                }
+                &__reviews{
+                    margin-left: 10px;
+                }
+            }
+            .add-to-cart{
+                margin: 10px 0;
+               .colors{
+                    button{
+                        width: 20px; height: 20px; margin: 5px;
+                        vertical-align: middle; opacity: .4;
+                        svg{
+                            color: white;
+                        }
+                        &.active{
+                            opacity: 1;
+                        }
+                    }
+               }
+               .buttons{
+                    margin: 15px 0 0;
+                    button{
+                        background: $clr_primary;
+                        border: 0; padding: 5px 15px;
+                        color: $clr_white;
+                    }
+                    .controls{
+                        .value{
+                            margin: 0 15px;
+                        }
+                    }
+                    .controls + button{
+                        margin: 20px 0 0;
+                        padding: 8px 22px;
+                        a{
+                            color: $clr_white;
+                        }
+                    }
+               }
+            }
+        }
+    }
+}
+
+
+.filters{
+    padding: 0 0 80px 0;
+    *{
+        font-size: 16px;
+    }
+    .form-control{
+        margin-bottom: 20px;
+        input[type="text"]{
+            width: calc(100% - 100px);
+            padding: 3px; border-radius: 5px;
+            @media only screen and (max-width: 767px){
+                width: 100%;
+            }
+        }
+        h5{
+            text-transform: capitalize;
+            margin-bottom: 5px;
+        }
+        &.category{
+            button{
+                display: block; color: #413f3f;
+                border: 0; background: none;
+                margin: 8px 0; text-transform: capitalize;
+                &.active{
+                    color: $clr_primary;
+                }
+            }
+        }
+        &.colors{
+            button{
+                width: 20px; height: 20px; border-radius: 50%;
+                border: 0;  margin-right: 5px; vertical-align: middle;
+                svg{
+                    color: $clr_white; font-size: 12px;
+                }
+                &.all-btn{
+                    background: none; text-transform: capitalize;
+                }
+            }
+        }
+        &.shipping{
+            label, input {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            input{
+                margin: 3px 0 0 5px;
+            }
+        }
+    }
+    .checkboxes{
+        > div{
+            margin: 5px 0;
+        }
+        h5{
+            margin-bottom: 8px;
+        }
+        input{
+            margin-right: 5px;
+        }
+    }
+    .checkboxes + button{
+        background: tomato;
+        border: 0; padding: 5px 8px; color: white;
+        text-transform: capitalize; font-weight: 600;
+        margin: 10px 0;
+    } 
+}

@@ -1,0 +1,71 @@
+
+@import './common/variables';
+
+// page-hero
+.page-hero{
+    background: $clr_primary;
+    padding: 5px 20px;
+    h3, a{
+        color: $clr_white;
+        font-size: 16px;
+    }
+    a{
+        color: $clr_darkGray;
+        font-size: 16px;
+    }
+}
+
+
+// about page
+.about{
+    padding: 40px 0; 
+    max-width: 75%; width: 100%; margin: 0 auto;
+    @media only screen and (max-width: 767px){
+        padding: 50px 20px;
+    }
+    p{
+        text-align: justify;
+    }
+
+    &__content{
+        padding-left: 50px; width: 50%;
+        @media only screen and (max-width: 767px){
+            order: -1; margin-bottom: 50px;
+            padding-left: 0;  width: 100%;
+        }
+    }
+    &__title{
+        font-size: 30px; letter-spacing: 3px;
+        margin-bottom: 30px; position: relative;
+    }
+    @media only screen and (max-width: 767px){
+        max-width: 100%; 
+    }
+}
+
+// error page
+.error-page{
+    @include displayFlex(flex);
+    @include flexDirection(column);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    h2{
+        font-size: 98px;
+    }
+    h4{
+        font-size: 30px;
+        margin: 30px 0;
+    }
+    button{
+        background: tomato; border: 0;
+        padding: 10px 20px; 
+        font-size: 18px; font-weight: 600;
+        a{
+            color: white;
+        }
+    }
+}
+
+
+
